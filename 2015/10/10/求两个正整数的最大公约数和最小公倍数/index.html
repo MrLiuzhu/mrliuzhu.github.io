@@ -8,8 +8,11 @@
   <title>求两个正整数的最大公约数和最小公倍数 | MrLiuzhu</title>
   <meta name="author" content="刘柱">
   
-  <meta name="description" content="辗转相除法辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前
-原理设两数为a、b(b1)，则m=kn+xd=kyd+xd=(ky+x)d，则a=mc=(ky+x)dc，b=nc=ycd，故a与b最">
+  <meta name="description" content="辗转相除法辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。
+原理
+javascript实现代码 function (m,n) {
+       if (m&amp;lt;n) {
+       tem">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -76,28 +79,26 @@
     </header>
     <div class="entry">
       
-        <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前</p>
-<h3 id="原理">原理</h3><p>设两数为a、b(b<a)，用gcd(a,b)表示a,b的最大公约数，r=a(mod b)="" 为a除以b以后的余数，k为a除以b的商，即a÷b="k余r。辗转相除法即是要证明gcd(a,b)=gcd(b,r)。" 第一步：令c="gcd(a,b),则设a=mc，b=nc;" 第二步：根据前提可知r="a-kb=mc-knc=(m-kn)c" 第三步：根据第二步结果可知c也是r的因数="" 第四步：可以断定m-kn与n互质【否则，可设m-kn="xd，n=yd" (d="">1)，则m=kn+xd=kyd+xd=(ky+x)d，则a=mc=(ky+x)dc，b=nc=ycd，故a与b最大公约数成为cd，而非c，与前面结论矛盾】<br>从而可知gcd(b,r)=c，继而gcd(a,b)=gcd(b,r)</a)，用gcd(a,b)表示a,b的最大公约数，r=a(mod></p>
-<h3 id="javascript实现代码">javascript实现代码</h3><blockquote>
-<pre><code>function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
-      <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
-      temp=<span class="keyword">m</span>; 
-      <span class="keyword">m</span>=<span class="keyword">n</span>;
-      <span class="keyword">n</span>=temp;
-       };
-       <span class="keyword">do</span>{
-                temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
-                console.<span class="literal">log</span>(temp);
-                console.<span class="literal">log</span>(<span class="keyword">m</span>);
-                console.<span class="literal">log</span>(<span class="keyword">n</span>);
-                <span class="keyword">m</span>=<span class="keyword">n</span>;
-                <span class="keyword">n</span>=temp;
-        }<span class="keyword">while</span>(temp);
-        <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
-        conso.<span class="literal">log</span>(yue)
+        <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。</p>
+<h3 id="原理">原理</h3><p><img src="http://7xne7a.com1.z0.glb.clouddn.com/15101001.png" alt="辗转相除法证明"></p>
+<h3 id="javascript实现代码">javascript实现代码</h3><pre><code> function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
+       <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
+       temp=<span class="keyword">m</span>; 
+       <span class="keyword">m</span>=<span class="keyword">n</span>;
+       <span class="keyword">n</span>=temp;
+        };
+        <span class="keyword">do</span>{
+                 temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
+                 console.<span class="literal">log</span>(temp);
+                 console.<span class="literal">log</span>(<span class="keyword">m</span>);
+                 console.<span class="literal">log</span>(<span class="keyword">n</span>);
+                 <span class="keyword">m</span>=<span class="keyword">n</span>;
+                 <span class="keyword">n</span>=temp;
+       }<span class="keyword">while</span>(temp);
+       <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
+       conso.<span class="literal">log</span>(yue)
 }
-</code></pre></blockquote>
-
+</code></pre>
       
     </div>
     <footer>
