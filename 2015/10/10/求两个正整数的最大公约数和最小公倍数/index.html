@@ -10,9 +10,9 @@
   
   <meta name="description" content="辗转相除法辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。
 原理
-javascript实现代码 function (m,n) {
-       if (m&amp;lt;n) {
-       tem">
+javascript实现代码function (m,n) {
+    if (m&amp;lt;n) {
+        temp=m">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -36,7 +36,7 @@ javascript实现代码 function (m,n) {
   <header id="header" class="inner">
 <div class="alignleft">
   <h1><a href="/">MrLiuzhu</a></h1>
-  <h2><a href="/"></a></h2>
+  <h2><a href="/">让子弹飞一会。。。。。。。。</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -81,24 +81,22 @@ javascript实现代码 function (m,n) {
       
         <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。</p>
 <h3 id="原理">原理</h3><p><img src="http://7xne7a.com1.z0.glb.clouddn.com/15101001.png" alt="辗转相除法证明"></p>
-<h3 id="javascript实现代码">javascript实现代码</h3><pre><code> function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
-       <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
-       temp=<span class="keyword">m</span>; 
-       <span class="keyword">m</span>=<span class="keyword">n</span>;
-       <span class="keyword">n</span>=temp;
-        };
-        <span class="keyword">do</span>{
-                 temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
-                 console.<span class="literal">log</span>(temp);
-                 console.<span class="literal">log</span>(<span class="keyword">m</span>);
-                 console.<span class="literal">log</span>(<span class="keyword">n</span>);
-                 <span class="keyword">m</span>=<span class="keyword">n</span>;
-                 <span class="keyword">n</span>=temp;
-       }<span class="keyword">while</span>(temp);
-       <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
-       conso.<span class="literal">log</span>(yue)
+<h3 id="javascript实现代码">javascript实现代码</h3><pre><code>function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
+    <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
+        temp=<span class="keyword">m</span>; 
+        <span class="keyword">m</span>=<span class="keyword">n</span>;
+        <span class="keyword">n</span>=temp;
+    };
+    <span class="keyword">do</span>{
+        temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
+        <span class="keyword">m</span>=<span class="keyword">n</span>;
+        <span class="keyword">n</span>=temp;
+    }<span class="keyword">while</span>(temp);
+    <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
+    console.<span class="literal">log</span>(yue);
 }
-</code></pre>
+</code></pre><h3 id="最小公倍数">最小公倍数</h3><p>最小公倍数的值可以通过最大公约数求得，即为输入的两个整数的乘积在除以最大公约数得到的值。</p>
+
       
     </div>
     <footer>
@@ -134,6 +132,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 
  <nav id="pagination" >
+    
+    <a href="/2015/10/12/抛小球/" class="alignleft prev" >上一页</a>
     
     
     <a href="/2015/10/09/OGC和OGC规范/" class="alignright next" >下一页</a>
@@ -179,7 +179,9 @@ var duoshuoQuery = {short_name:"zippera"};
   
     <li><a href="/categories/geoserver/">geoserver</a><small>1</small></li>
   
-    <li><a href="/categories/算法/">算法</a><small>1</small></li>
+    <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/categories/算法/">算法</a><small>2</small></li>
   
   </ul>
 </div>

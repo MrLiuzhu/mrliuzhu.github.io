@@ -30,7 +30,7 @@
   <header id="header" class="inner">
 <div class="alignleft">
   <h1><a href="/">MrLiuzhu</a></h1>
-  <h2><a href="/"></a></h2>
+  <h2><a href="/">让子弹飞一会。。。。。。。。</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -64,6 +64,110 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-10-12T04:42:26.000Z"><a href="/2015/10/12/hexo常用功能/">2015-10-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/12/hexo常用功能/">hexo常用功能</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="本章内容为hexo常用功能的记录">本章内容为hexo常用功能的记录</h2><h3 id="句首空格实现">句首空格实现</h3><blockquote>
+<p>半方大的空白&ensp;&ensp;<code>&amp;ensp;</code>或<code>&amp;#8194;</code><br>全方大的空白&ensp;&ensp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code><br>不断行的空白格&ensp;&ensp;<code>&amp;nbsp;</code>或<code>&amp;#160;</code> </p>
+<h3 id="通过添加反斜线(\)插入下面的符号">通过添加反斜线(\)插入下面的符号</h3><p>\&emsp;&emsp;反斜线<br>`&emsp;&emsp;反引号<br>*&emsp;&emsp;星号<br>_&emsp;&emsp;底线<br>{}&emsp;&emsp;花括号<br>[]&emsp;&emsp;方括号<br>()&emsp;&emsp;括弧<br>#&emsp;&emsp;#号<br>+&emsp;&emsp;加号<br>-&emsp;&emsp;减号<br>.&emsp;&emsp;英文句点<br>!&emsp;&emsp;惊叹号  </p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-12T04:31:52.000Z"><a href="/2015/10/12/抛小球/">2015-10-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/12/抛小球/">抛小球</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>小东和三个朋友一起在楼上抛小球，他们站在楼房的不同层，假设小东站的楼层距离地面N米，球从他手里自由落下，每次落地后反跳回上次下落高度的一半，并以此类推知道全部落到地面不跳，求4个小球一共经过了多少米？(数字都为整数)</p>
+<blockquote>
+<p>测试样例：<br>&emsp;&emsp;100,90,80,70<br>返回：<br>&emsp;&emsp;1020</p>
+<h3 id="c++代码">c++代码</h3><pre><code><span class="class"><span class="keyword">class</span> <span class="title">Balls</span> </span>{
+<span class="keyword">public</span>:
+    <span class="keyword">int</span> calcDistance(<span class="keyword">int</span> A, <span class="keyword">int</span> B, <span class="keyword">int</span> C, <span class="keyword">int</span> D) {
+        <span class="keyword">int</span> <span class="keyword">sum</span>=A+B+C+D;
+        <span class="keyword">return</span> <span class="number">3</span>*<span class="keyword">sum</span>;
+    }
+};
+</code></pre><h3 id="分析">分析</h3><p>设每一个小球的初始高度为m,则每一个小球的第一次落地后，每次跳起至落地走过的路程为前一次的跳起高度，于是<br>   Sn=m+m*(1+1/2+1/4+…+(1/2)^n)<br>   Sn=m+m*((1-(1/2)^n)/(1-1/2))<br>   当n趋近与无穷大时<br>   Sn=3m</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-10-09T17:19:43.000Z"><a href="/2015/10/10/求两个正整数的最大公约数和最小公倍数/">2015-10-10</a></time>
       
       
@@ -76,24 +180,22 @@
       
         <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。</p>
 <h3 id="原理">原理</h3><p><img src="http://7xne7a.com1.z0.glb.clouddn.com/15101001.png" alt="辗转相除法证明"></p>
-<h3 id="javascript实现代码">javascript实现代码</h3><pre><code> function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
-       <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
-       temp=<span class="keyword">m</span>; 
-       <span class="keyword">m</span>=<span class="keyword">n</span>;
-       <span class="keyword">n</span>=temp;
-        };
-        <span class="keyword">do</span>{
-                 temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
-                 console.<span class="literal">log</span>(temp);
-                 console.<span class="literal">log</span>(<span class="keyword">m</span>);
-                 console.<span class="literal">log</span>(<span class="keyword">n</span>);
-                 <span class="keyword">m</span>=<span class="keyword">n</span>;
-                 <span class="keyword">n</span>=temp;
-       }<span class="keyword">while</span>(temp);
-       <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
-       conso.<span class="literal">log</span>(yue)
+<h3 id="javascript实现代码">javascript实现代码</h3><pre><code>function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
+    <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
+        temp=<span class="keyword">m</span>; 
+        <span class="keyword">m</span>=<span class="keyword">n</span>;
+        <span class="keyword">n</span>=temp;
+    };
+    <span class="keyword">do</span>{
+        temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
+        <span class="keyword">m</span>=<span class="keyword">n</span>;
+        <span class="keyword">n</span>=temp;
+    }<span class="keyword">while</span>(temp);
+    <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
+    console.<span class="literal">log</span>(yue);
 }
-</code></pre>
+</code></pre><h3 id="最小公倍数">最小公倍数</h3><p>最小公倍数的值可以通过最大公约数求得，即为输入的两个整数的乘积在除以最大公约数得到的值。</p>
+
       
     </div>
     <footer>
@@ -176,7 +278,9 @@
   
     <li><a href="/categories/geoserver/">geoserver</a><small>1</small></li>
   
-    <li><a href="/categories/算法/">算法</a><small>1</small></li>
+    <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/categories/算法/">算法</a><small>2</small></li>
   
   </ul>
 </div>
