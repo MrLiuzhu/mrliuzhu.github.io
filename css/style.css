@@ -349,14 +349,14 @@ article .entry .video-container {
   margin-top: 15px;
 }
 article .entry blockquote {
-  background: #f6f6f6;
+  background: #000;
   border-left: 4px solid #999;
   font-style: normal;
   font-family: Georgia, 'Times New Roman', Times, STFangsong, KaiTi, serif;
   font-size: 1.2em;
-  padding: 0 30px 15px;
+  padding: 0 10px 15px;
   padding-top: 10px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
 article .entry blockquote footer {
   border-top: none;
