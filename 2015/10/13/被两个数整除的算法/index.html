@@ -5,15 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>OGC和OGC规范 | MrLiuzhu</title>
+  <title>被两个数整除的算法 | MrLiuzhu</title>
   <meta name="author" content="刘柱">
   
-  <meta name="description" content="OGCOGC全称Open Geospatial Consortium，自称是一个非盈利的、国际化的、自愿协商的标准化组织，它的主要目的就是制定与空间信息、基于位置服务相关的标准。这些标准就是OGC的“产品”，而这些标准的用处就在于使不同厂商、不同产品之间可以通过统一的接口进行互操作。在GIS领域，O">
+  <meta name="description" content="题目实现 fizzBuzz 函数，参数 num 与返回值的关系如下：1、如果 num 能同时被 3 和 5 整除，返回字符串 fizzbuzz2、如果 num 能被 3 整除，返回字符串 fizz3、如果 num 能被 5 整除，返回字符串 buzz4、如果参数为空或者不是 Number 类型，返回">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="OGC和OGC规范"/>
+  <meta property="og:title" content="被两个数整除的算法"/>
   <meta property="og:site_name" content="MrLiuzhu"/>
 
   
@@ -65,18 +65,38 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-09T14:35:49.000Z"><a href="/2015/10/09/OGC和OGC规范/">2015-10-09</a></time>
+        <time datetime="2015-10-13T14:55:18.000Z"><a href="/2015/10/13/被两个数整除的算法/">2015-10-13</a></time>
       
       
   
-    <h1 class="title">OGC和OGC规范</h1>
+    <h1 class="title">被两个数整除的算法</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="OGC">OGC</h3><p>OGC全称Open Geospatial Consortium，自称是一个非盈利的、国际化的、自愿协商的标准化组织，它的主要目的就是制定与空间信息、基于位置服务相关的标准。这些标准就是OGC的“产品”，而这些标准的用处就在于使不同厂商、不同产品之间可以通过统一的接口进行互操作。<br>在GIS领域，OGC已经是一个比较“官方”的标准化机构了，它不但包括了ESRI、Google、Oracle等业界强势企业作为其成员，同时还和W3C、ISO、IEEE等协会或组织结成合作伙伴关系。因此，OGC的标准虽然并不带有强制性，但是因为其背景和历史的原因，它所制定的标准天然地具有一定的权威性。</p>
-<h3 id="OGC标准">OGC标准</h3><p>OGC的标准基本上就是OGC所有的成果，而所谓的标准就是一些接口或编码的技术文档。不同的厂商、各种GIS产品都可以对照这些文档来定义开放服务的接口、空间数据存储的编码、空间操作的方法等。<br>除了正式发布的标准（OpenGIS® Standards ），OGC的工作成果还包括一些其它类型的文档，比如讨论稿（Discussion Papers ）、抽象规范（Abstract Specification ）、最佳实践文档（Best Practices Documents ）、OGC参考模型（OGC Reference Model (ORM) ）、白皮书（White Papers ）等。在OGC的工作中，标准的制定可能由待讨论的“讨论稿”开始，在形成一定的统一意见后形成“抽象规范”，进一步具体化到“标准”，在这个过程中同时也可能形成“最佳实践文档”供印证，而“OGC参考模型”则是描述“抽象规范”、“标准”、“最佳实践文档”之间的关系。当然，其中我们最关心的还是OGC标准文档。<br><img src="http://7xne7a.com1.z0.glb.clouddn.com/ogc.png" alt="OGC标准"></p>
+        <h3 id="题目">题目</h3><p>实现 fizzBuzz 函数，参数 num 与返回值的关系如下：<br>1、如果 num 能同时被 3 和 5 整除，返回字符串 fizzbuzz<br>2、如果 num 能被 3 整除，返回字符串 fizz<br>3、如果 num 能被 5 整除，返回字符串 buzz<br>4、如果参数为空或者不是 Number 类型，返回 false<br>5、其余情况，返回参数 num<br>输入例子：  </p>
+<blockquote>
+<p>fizzBuzz(15)</p>
+</blockquote>
+<p>输出例子：</p>
+<blockquote>
+<p>fizzbuzz</p>
+</blockquote>
+<h3 id="javascript代码">javascript代码</h3><pre><code>function fizzBuzz(<span class="built_in">num</span>) {
+    <span class="keyword">if</span>(isNaN(<span class="built_in">num</span>)){
+        <span class="keyword">return</span> <span class="keyword">false</span>;
+    }
+    <span class="keyword">var</span> str=<span class="string">''</span>;
+    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">3</span>===<span class="number">0</span>){
+        str+=<span class="string">'fizz'</span>;
+    }
+    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">5</span>===<span class="number">0</span>){
+        str+=<span class="string">'buzz'</span>;
+    }
+    <span class="keyword">return</span> str||<span class="built_in">num</span>;
+}
+</code></pre><p>附：返回的是字符串，需要加引号</p>
 
       
     </div>
@@ -85,7 +105,7 @@
         
   
   <div class="categories">
-    <a href="/categories/geoserver/">geoserver</a>
+    <a href="/categories/算法/">算法</a>
   </div>
 
         
@@ -114,8 +134,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
  <nav id="pagination" >
     
-    <a href="/2015/10/10/求两个正整数的最大公约数和最小公倍数/" class="alignleft prev" >上一页</a>
     
+    <a href="/2015/10/13/常用的js函数/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>

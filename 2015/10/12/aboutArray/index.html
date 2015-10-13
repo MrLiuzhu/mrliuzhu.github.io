@@ -114,7 +114,8 @@ javascript代码">
 <p>start:必须，开始选取元素的位置，如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。；<br>end:可选。规定从何处结束选取；<br><strong>返回值</strong>：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。 </p>
 </blockquote>
 <h3 id="复制数组">复制数组</h3><p>&emsp;&emsp;var newarr=arr.slice(0);</p>
-<h3 id="一个使用数组forEach的例子">一个使用数组forEach的例子</h3><h4 id="统计数组arr中值等于item的元素出现的次数">统计数组arr中值等于item的元素出现的次数</h4><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
+<h3 id="forEach函数">forEach函数</h3><p>该函数不改变原函数的值</p>
+<h3 id="题目：统计数组arr中值等于item的元素出现的次数">题目：统计数组arr中值等于item的元素出现的次数</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
     <span class="keyword">var</span> num=<span class="number">0</span>;
     arr.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
            item==e?num++:num;
@@ -175,6 +176,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
  <nav id="pagination" >
     
+    <a href="/2015/10/13/常用的js函数/" class="alignleft prev" >上一页</a>
+    
     
     <a href="/2015/10/12/hexo常用功能/" class="alignright next" >下一页</a>
     
@@ -221,9 +224,9 @@ var duoshuoQuery = {short_name:"zippera"};
   
     <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/categories/javascript/">javascript</a><small>1</small></li>
+    <li><a href="/categories/javascript/">javascript</a><small>2</small></li>
   
-    <li><a href="/categories/算法/">算法</a><small>2</small></li>
+    <li><a href="/categories/算法/">算法</a><small>3</small></li>
   
   </ul>
 </div>

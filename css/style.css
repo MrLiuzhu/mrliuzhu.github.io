@@ -383,7 +383,7 @@ article .entry code {
   border-radius: 3px;
 }
 article .entry pre {
-  background: #000;
+  background: #222;
   border: 1px solid #ddd;
   margin-top: 15px;
   overflow: auto;
