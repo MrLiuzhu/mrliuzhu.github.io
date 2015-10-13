@@ -375,8 +375,8 @@ article .entry pre {
   font-family: Monaco, Menlo, Consolas, Courier New, monospace;
 }
 article .entry code {
-  background: #000;
-  color: #fff;
+  background: #fbedeb;
+  color: #e2678f;
   padding: 0 5px;
   margin: 0 2px;
   font-size: 0.9em;
