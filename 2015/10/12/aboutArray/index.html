@@ -5,20 +5,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>aboArray | MrLiuzhu</title>
+  <title>部分数组函数的使用 | MrLiuzhu</title>
   <meta name="author" content="刘柱">
   
   <meta name="description" content="题目移除数组 arr 中的所有值与 item 相等的元素，请直接在给定的 arr 数组上进行操作  
 
 测试样例：&amp;emsp;&amp;emsp;removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2)返回：&amp;emsp;&amp;emsp;[1, 3, 4]
 
-
-javascript代">
+javascript代码">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="aboArray"/>
+  <meta property="og:title" content="部分数组函数的使用"/>
   <meta property="og:site_name" content="MrLiuzhu"/>
 
   
@@ -74,7 +73,7 @@ javascript代">
       
       
   
-    <h1 class="title">aboArray</h1>
+    <h1 class="title">部分数组函数的使用</h1>
   
 
     </header>
@@ -84,7 +83,6 @@ javascript代">
 <blockquote>
 <p>测试样例：<br>&emsp;&emsp;removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2)<br>返回：<br>&emsp;&emsp;[1, 3, 4]</p>
 </blockquote>
-<hr>
 <h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span><span class="params">(arr, item)</span> {</span>
     var len=arr.<span class="built_in">length</span>;
     <span class="keyword">for</span>(var <span class="built_in">i</span>=len-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">0</span>;<span class="built_in">i</span>--)<span class="cell">{
@@ -108,16 +106,15 @@ javascript代">
 }
 </code></pre><h3 id="splice函数说明">splice函数说明</h3><p>&emsp;&emsp;array.splice(start,delCount,item1,item2….);//该函数从start位置开始删除delCount数量个元素，然后从start的位置插入后面的其他元素  </p>
 <blockquote>
-<p>start:开始删除元素的位置：包括这个位置；<br>delCount:删除元素的个数；<br>item1,item2…:删除后从start位置开始添加的元素<br>返回值：被删除项目组成的新数组。</p>
+<p>start:开始删除元素的位置：包括这个位置；<br>delCount:删除元素的个数；<br>item1,item2…:删除后从start位置开始添加的元素<br><strong>返回值</strong>：被删除项目组成的新数组。</p>
 </blockquote>
-<hr>
 <p>例：var arr=[1,2,3,4];<br>arr.splice(1,2);//[1,4] 从位置为1的位置开始删除两个元素；<br>arr.splice(1,1,3);//[1,3,3,4] 从位置为1的地方删除一个元素，然后在这个位置添加元素3；</p>
 <h3 id="slice函数">slice函数</h3><p>&emsp;&emsp;arrayObject.slice(start,end)//该函数从已有的数组中返回选定的元素  </p>
 <blockquote>
-<p>start:必须，开始选取元素的位置，如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。；<br>end:可选。规定从何处结束选取；<br>返回值：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。 </p>
+<p>start:必须，开始选取元素的位置，如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。；<br>end:可选。规定从何处结束选取；<br><strong>返回值</strong>：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。 </p>
 </blockquote>
 <h3 id="复制数组">复制数组</h3><p>&emsp;&emsp;var newarr=arr.slice(0);</p>
-<h3 id="一个使用数组forEach的例子">一个使用数组forEach的例子</h3><h6 id="统计数组arr中值等于item的元素出现的次数">统计数组arr中值等于item的元素出现的次数</h6><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
+<h3 id="一个使用数组forEach的例子">一个使用数组forEach的例子</h3><h4 id="统计数组arr中值等于item的元素出现的次数">统计数组arr中值等于item的元素出现的次数</h4><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
     <span class="keyword">var</span> num=<span class="number">0</span>;
     arr.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
            item==e?num++:num;
@@ -126,7 +123,7 @@ javascript代">
 }
 </code></pre><h3 id="sort()函数">sort()函数</h3><p>该函数默认已字符串的方式进行排序</p>
 <blockquote>
-<p>返回值：对数组的引用。请注意，数组在原数组上进行排序，不生成副本。</p>
+<p><strong>返回值</strong>：对数组的引用。请注意，数组在原数组上进行排序，不生成副本。</p>
 <h3 id="查找数组重复元素">查找数组重复元素</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">duplicates</span><span class="params">(arr)</span> <span class="comment">{
     var a=arr.sort();
     var b=[];
