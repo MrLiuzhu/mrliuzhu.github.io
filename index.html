@@ -64,6 +64,111 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-10-15T12:33:34.000Z"><a href="/2015/10/15/二次封装函数/">2015-10-15</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/15/二次封装函数/">二次封装函数</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>实现函数 partialUsingArguments，调用之后满足如下条件：<br>1、返回一个函数 result<br>2、调用 result 之后，返回的结果与调用函数 fn 的结果一致<br>3、fn 的调用参数为 partialUsingArguments 的第一个参数之后的全部参数以及 result 的调用参数  </p>
+<blockquote>
+<p>输入例子</p>
+</blockquote>
+<p>var a = 1; var b = 2; var c = 3; var d = 4;<br>var test = function (first, second, third, forth)     {return first + second + third +forth;<br>partialUsingArguments(test, a, b)(c, d);</p>
+<blockquote>
+<p>输出例子:</p>
+</blockquote>
+<p>10</p>
+<h3 id="javascript">javascript</h3><pre><code>function partialUsingArguments(fn) {
+    <span class="keyword">var</span> newarr=<span class="type">Array</span>.prototype.slice.call(arguments,<span class="number">1</span>);
+    <span class="keyword">var</span> <span class="literal">result</span>=function(){
+        <span class="keyword">return</span> fn.apply(null,newarr.concat([].slice.call(arguments)));
+    }
+    <span class="keyword">return</span> <span class="literal">result</span>;
+}
+</code></pre><h3 id="说明">说明</h3><p>Array.prototype.slice.call(arguments,1);    //将函数参数从第一位截取为数组  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-14T04:56:50.000Z"><a href="/2015/10/14/进程和线程/">2015-10-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/14/进程和线程/">进程和线程</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-10-13T16:21:07.000Z"><a href="/2015/10/14/apply和call函数/">2015-10-14</a></time>
       
       
@@ -85,14 +190,11 @@
 <h3 id="具体使用情况">具体使用情况</h3><p>使用apply时参数可以是数组类型，使用call时参数是参数列表的形式。  </p>
 <h3 id="一些妙用">一些妙用</h3><p>apply可以将一个数组默认的转换为一个参数列表([param1,param2,param3] 转换为 param1,param2,param3)。  </p>
 <ul>
-<li><p>Math.max 可以实现得到数组中最大的一项<br>方法：</p>
-<p>  var max=Math.max.apply(null,array)</p>
+<li>Math.max 可以实现得到数组中最大的一项<br>方法：<br>  var max=Math.max.apply(null,array)</li>
+<li>Math.min  可以实现得到数组中最小的一项<br>方法：<br>  var min=Math.min.apply(null,array);  </li>
+<li><p>Array.prototype.push 可以实现两个数组合并<br>  vararr1=new Array(“1”,”2”,”3”);<br>  vararr2=new Array(“4”,”5”,”6”);<br>  Array.prototype.push.apply(arr1,arr2);  </p>
 </li>
-<li><p>Math.min  可以实现得到数组中最小的一项<br>方法：</p>
-<p>  var min=Math.min.apply(null,array);  </p>
-</li>
-<li><p>Array.prototype.push 可以实现两个数组合并</p>
-<p>  vararr1=new Array(“1”,”2”,”3”);<br>  vararr2=new Array(“4”,”5”,”6”);<br>  Array.prototype.push.apply(arr1,arr2);</p>
+<li><p>Array.prototype.slice.call(arguments,1) //将arguments对象转化成数组,从1出开始截取</p>
 </li>
 </ul>
 
@@ -232,161 +334,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-12T12:23:18.000Z"><a href="/2015/10/12/aboutArray/">2015-10-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/12/aboutArray/">部分数组函数的使用</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="题目">题目</h3><p>移除数组 arr 中的所有值与 item 相等的元素，请直接在给定的 arr 数组上进行操作  </p>
-<blockquote>
-<p>测试样例：<br>&emsp;&emsp;removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2)<br>返回：<br>&emsp;&emsp;[1, 3, 4]</p>
-</blockquote>
-<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span><span class="params">(arr, item)</span> {</span>
-    var len=arr.<span class="built_in">length</span>;
-    <span class="keyword">for</span>(var <span class="built_in">i</span>=len-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">0</span>;<span class="built_in">i</span>--)<span class="cell">{
-        if(arr[i]==item)
-            {
-                arr.splice(i,<span class="number">1</span>);
-            }</span>
-    }
-    <span class="keyword">return</span> arr;
-}
-</code></pre><h3 id="javascript代码2">javascript代码2</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span><span class="params">(arr, item)</span> {</span>
-    var len=arr.<span class="built_in">length</span>;
-    <span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;len;<span class="built_in">i</span>++)<span class="cell">{
-        if(arr[i]==item)
-            {
-                arr.splice(i,<span class="number">1</span>);
-            }</span>
-        <span class="built_in">i</span>--;
-    }
-    <span class="keyword">return</span> arr;
-}
-</code></pre><h3 id="splice函数说明">splice函数说明</h3><p>&emsp;&emsp;array.splice(start,delCount,item1,item2….);//该函数从start位置开始删除delCount数量个元素，然后从start的位置插入后面的其他元素  </p>
-<blockquote>
-<p>start:开始删除元素的位置：包括这个位置；<br>delCount:删除元素的个数；<br>item1,item2…:删除后从start位置开始添加的元素<br><strong>返回值</strong>：被删除项目组成的新数组。</p>
-</blockquote>
-<p>例：var arr=[1,2,3,4];<br>arr.splice(1,2);//[1,4] 从位置为1的位置开始删除两个元素；<br>arr.splice(1,1,3);//[1,3,3,4] 从位置为1的地方删除一个元素，然后在这个位置添加元素3；</p>
-<h3 id="slice函数">slice函数</h3><p>&emsp;&emsp;arrayObject.slice(start,end)//该函数从已有的数组中返回选定的元素  </p>
-<blockquote>
-<p>start:必须，开始选取元素的位置，如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。；<br>end:可选。规定从何处结束选取；<br><strong>返回值</strong>：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。 </p>
-</blockquote>
-<h3 id="复制数组">复制数组</h3><p>&emsp;&emsp;var newarr=arr.slice(0);</p>
-<h3 id="forEach函数">forEach函数</h3><p>该函数不改变原函数的值</p>
-<h3 id="题目：统计数组arr中值等于item的元素出现的次数">题目：统计数组arr中值等于item的元素出现的次数</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
-    <span class="keyword">var</span> num=<span class="number">0</span>;
-    arr.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
-           item==e?num++:num;
-    })
-    <span class="keyword">return</span> num;
-}
-</code></pre><h3 id="sort()函数">sort()函数</h3><p>该函数默认已字符串的方式进行排序</p>
-<blockquote>
-<p><strong>返回值</strong>：对数组的引用。请注意，数组在原数组上进行排序，不生成副本。</p>
-</blockquote>
-<h3 id="查找数组重复元素">查找数组重复元素</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">duplicates</span><span class="params">(arr)</span> <span class="comment">{
-    var a=arr.sort();
-    var b=[];
-    for(var i in a){
-        if(a[i]==a[i-1] &amp;&amp; b.indexOf(a[i])==-1) b.push(a[i]); 
-    }</span>
-    <span class="title">return</span> <span class="title">b</span>;</span>
-}
-</code></pre>
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-12T04:42:26.000Z"><a href="/2015/10/12/hexo常用功能/">2015-10-12</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/12/hexo常用功能/">hexo常用功能</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="本章内容为hexo常用功能的记录">本章内容为hexo常用功能的记录</h2><h3 id="句首空格实现">句首空格实现</h3><blockquote>
-<p>半方大的空白&ensp;&ensp;<code>&amp;ensp;</code>或<code>&amp;#8194;</code><br>全方大的空白&ensp;&ensp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code><br>不断行的空白格&ensp;&ensp;<code>&amp;nbsp;</code>或<code>&amp;#160;</code></p>
-</blockquote>
-<h3 id="通过添加反斜线(\)插入下面的符号">通过添加反斜线(\)插入下面的符号</h3><blockquote>
-<p>\&emsp;&emsp;反斜线<br>`&emsp;&emsp;反引号<br>*&emsp;&emsp;星号<br>_&emsp;&emsp;底线<br>{}&emsp;&emsp;花括号<br>[]&emsp;&emsp;方括号<br>()&emsp;&emsp;括弧<br>#&emsp;&emsp;#号<br>+&emsp;&emsp;加号<br>-&emsp;&emsp;减号<br>.&emsp;&emsp;英文句点<br>!&emsp;&emsp;惊叹号</p>
-</blockquote>
-<h3 id="添加分割线:用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西,也可以在星号或是减号中间插入空格。下面是一些例子：">添加分割线:用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西,也可以在星号或是减号中间插入空格。下面是一些例子：</h3><p>***</p>
-<hr>
-<p>* <em> </em></p>
-<hr>
-<p>*<em>**</em></p>
-<hr>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -412,7 +359,9 @@
   
     <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/categories/javascript/">javascript</a><small>3</small></li>
+    <li><a href="/categories/javascript/">javascript</a><small>4</small></li>
+  
+    <li><a href="/categories/操作系统/">操作系统</a><small>1</small></li>
   
     <li><a href="/categories/算法/">算法</a><small>3</small></li>
   

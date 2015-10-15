@@ -5,17 +5,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>抛小球 | MrLiuzhu</title>
+  <title>进程和线程 | MrLiuzhu</title>
   <meta name="author" content="刘柱">
-  
-  <meta name="description" content="题目小东和三个朋友一起在楼上抛小球，他们站在楼房的不同层，假设小东站的楼层距离地面N米，球从他手里自由落下，每次落地后反跳回上次下落高度的一半，并以此类推知道全部落到地面不跳，求4个小球一共经过了多少米？(数字都为整数)
-
-测试样例：&amp;emsp;&amp;emsp;100,90,80,70返回：&amp;emsp;">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="抛小球"/>
+  <meta property="og:title" content="进程和线程"/>
   <meta property="og:site_name" content="MrLiuzhu"/>
 
   
@@ -67,32 +63,17 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-12T04:31:52.000Z"><a href="/2015/10/12/抛小球/">2015-10-12</a></time>
+        <time datetime="2015-10-14T04:56:50.000Z"><a href="/2015/10/14/进程和线程/">2015-10-14</a></time>
       
       
   
-    <h1 class="title">抛小球</h1>
+    <h1 class="title">进程和线程</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="题目">题目</h3><p>小东和三个朋友一起在楼上抛小球，他们站在楼房的不同层，假设小东站的楼层距离地面N米，球从他手里自由落下，每次落地后反跳回上次下落高度的一半，并以此类推知道全部落到地面不跳，求4个小球一共经过了多少米？(数字都为整数)</p>
-<blockquote>
-<p>测试样例：<br>&emsp;&emsp;100,90,80,70<br>返回：<br>&emsp;&emsp;1020  </p>
-</blockquote>
-<h3 id="c++代码">c++代码</h3><pre><code><span class="class"><span class="keyword">class</span> <span class="title">Balls</span> </span>{
-<span class="keyword">public</span>:
-    <span class="keyword">int</span> calcDistance(<span class="keyword">int</span> A, <span class="keyword">int</span> B, <span class="keyword">int</span> C, <span class="keyword">int</span> D) {
-        <span class="keyword">int</span> <span class="keyword">sum</span>=A+B+C+D;
-        <span class="keyword">return</span> <span class="number">3</span>*<span class="keyword">sum</span>;
-    }
-};
-</code></pre><h3 id="分析">分析</h3><p>设每一个小球的初始高度为m,则每一个小球的第一次落地后，每次跳起至落地走过的路程为前一次的跳起高度，于是  </p>
-<blockquote>
-<p>   Sn=m+m*(1+1/2+1/4+…+(1/2)^n)<br>   Sn=m+m*((1-(1/2)^n)/(1-1/2))<br>   当n趋近与无穷大时<br>   Sn=3m</p>
-</blockquote>
-
+        
       
     </div>
     <footer>
@@ -100,13 +81,13 @@
         
   
   <div class="categories">
-    <a href="/categories/算法/">算法</a>
+    <a href="/categories/操作系统/">操作系统</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/c-算法/">c++ 算法</a>
+    <a href="/tags/进程/">进程</a>
   </div>
 
 <!-- Baidu Button BEGIN -->
@@ -134,10 +115,10 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
  <nav id="pagination" >
     
-    <a href="/2015/10/12/hexo常用功能/" class="alignleft prev" >上一页</a>
+    <a href="/2015/10/15/二次封装函数/" class="alignleft prev" >上一页</a>
     
     
-    <a href="/2015/10/10/求两个正整数的最大公约数和最小公倍数/" class="alignright next" >下一页</a>
+    <a href="/2015/10/14/apply和call函数/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>
