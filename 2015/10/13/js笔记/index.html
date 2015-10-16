@@ -5,19 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>求两个正整数的最大公约数和最小公倍数 | MrLiuzhu</title>
+  <title>js笔记 | MrLiuzhu</title>
   <meta name="author" content="刘柱">
   
-  <meta name="description" content="辗转相除法辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。
-原理
-javascript实现代码function (m,n) {
-    if (m&amp;lt;n) {
-        temp=m">
+  <meta name="description" content="本文主要记录一些常用js函数的用法
+parseInt(string, radix)参数说明：string：必需。要被解析的字符串。radix：可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="求两个正整数的最大公约数和最小公倍数"/>
+  <meta property="og:title" content="js笔记"/>
   <meta property="og:site_name" content="MrLiuzhu"/>
 
   
@@ -69,33 +66,27 @@ javascript实现代码function (m,n) {
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-09T17:19:43.000Z"><a href="/2015/10/10/求两个正整数的最大公约数和最小公倍数/">2015-10-10</a></time>
+        <time datetime="2015-10-13T13:45:23.000Z"><a href="/2015/10/13/js笔记/">2015-10-13</a></time>
       
       
   
-    <h1 class="title">求两个正整数的最大公约数和最小公倍数</h1>
+    <h1 class="title">js笔记</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。</p>
-<h3 id="原理">原理</h3><p><img src="http://7xne7a.com1.z0.glb.clouddn.com/15101001.png" alt="辗转相除法证明"></p>
-<h3 id="javascript实现代码">javascript实现代码</h3><pre><code>function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
-    <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
-        temp=<span class="keyword">m</span>; 
-        <span class="keyword">m</span>=<span class="keyword">n</span>;
-        <span class="keyword">n</span>=temp;
-    };
-    <span class="keyword">do</span>{
-        temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
-        <span class="keyword">m</span>=<span class="keyword">n</span>;
-        <span class="keyword">n</span>=temp;
-    }<span class="keyword">while</span>(temp);
-    <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
-    console.<span class="literal">log</span>(yue);
-}
-</code></pre><h3 id="最小公倍数">最小公倍数</h3><p>最小公倍数的值可以通过最大公约数求得，即为输入的两个整数的乘积在除以最大公约数得到的值。</p>
+        <p>本文主要记录一些常用js函数的用法</p>
+<h4 id="parseInt(string,_radix)">parseInt(string, radix)</h4><p>参数说明：<br>string：必需。要被解析的字符串。<br>radix：可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。<br><strong>提示</strong>：只有字符串中的第一个数字会被返回,开头和结尾的空格是允许的,如果字符串的第一个字符不能被转换为数字，那么 parseFloat() 会返回 NaN。<br><strong>注意</strong>：如果 string 以 “0x” 开头，parseInt() 会把 string 的其余部分解析为十六进制的整数。如果 string 以 0 开头，那么 ECMAScript v3 允许 parseInt() 的一个实现把其后的字符解析为八进制或十六进制的数字。如果 string 以 1 ~ 9 的数字开头，parseInt() 将把它解析为十进制的整数。</p>
+<pre><code><span class="built_in">parseInt</span>(<span class="string">"10"</span>);         <span class="comment">//返回 10  </span>
+<span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);      <span class="comment">//返回 19 (10+9)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"11"</span>,<span class="number">2</span>);       <span class="comment">//返回 3 (2+1)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"17"</span>,<span class="number">8</span>);       <span class="comment">//返回 15 (8+7)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);      <span class="comment">//返回 31 (16+15)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"010"</span>);        <span class="comment">//未定：返回 10 或 8  </span>
+</code></pre><h3 id="NumberObject-toString(radix)">NumberObject.toString(radix)</h3><p>作用：number转换成字符串<br>调用：NumberObject.toString(2);//NumberObject，2为转换成字符串的基数，此处将数字转换为2进制。<br><strong>返回值</strong>：数字的字符串表示</p>
+<h3 id="NOSCRIPT标签">NOSCRIPT标签</h3><p>NOSCRIPT标签用来定义在脚本未被执行时的替代内容。也可以用在检测浏览器是否支持脚本，若不支持脚本则可以显示NOSCRIPT标签里的innerText</p>
+<h3 id="js类型问题">js类型问题</h3><p><strong>七种数据类型</strong>：Sting  Object  null  undefined  Array  Boolean  Number<br><strong>五种基本类型</strong>：String Object Number null undefined<br><strong>typeof六种返回格式</strong>：’string’  ‘number’  ‘object’  ‘function’  ‘null’  ‘undefined’  </p>
 
       
     </div>
@@ -104,7 +95,7 @@ javascript实现代码function (m,n) {
         
   
   <div class="categories">
-    <a href="/categories/算法/">算法</a>
+    <a href="/categories/javascript/">javascript</a>
   </div>
 
         
@@ -133,10 +124,10 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
  <nav id="pagination" >
     
-    <a href="/2015/10/12/抛小球/" class="alignleft prev" >上一页</a>
+    <a href="/2015/10/13/被两个数整除的算法/" class="alignleft prev" >上一页</a>
     
     
-    <a href="/2015/10/09/OGC和OGC规范/" class="alignright next" >下一页</a>
+    <a href="/2015/10/12/aboutArray/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>

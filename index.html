@@ -64,6 +64,74 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2015-10-16T06:48:02.000Z"><a href="/2015/10/16/找出不在原型链上的属性/">2015-10-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/16/找出不在原型链上的属性/">找出不在原型链上的属性</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>找出对象 obj 不在原型链上的属性<br>1.返回数组，格式为 key: value<br>2.结果数组不要求顺序   </p>
+<blockquote>
+<p>输入例子</p>
+</blockquote>
+<pre><code><span class="keyword">var</span> C = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+        <span class="keyword">this</span>.foo = <span class="string">'bar'</span>; 
+        <span class="keyword">this</span>.baz = <span class="string">'bim'</span>;
+    }; 
+C.prototype.bop = <span class="string">'bip'</span>; 
+iterate(<span class="keyword">new</span> C());
+</code></pre><blockquote>
+<p>输出例子</p>
+</blockquote>
+<pre><code>[<span class="string">"foo: bar"</span>, <span class="string">"baz: bim"</span>]
+</code></pre><h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">iterate</span><span class="params">(obj)</span> </span>{
+    <span class="keyword">var</span> arr=[];
+    <span class="keyword">for</span>(<span class="keyword">var</span> o <span class="keyword">in</span> obj){
+        <span class="keyword">if</span>(obj.hasOwnProperty(o))
+            {
+                arr.push(o+<span class="string">": "</span>+obj[o]);
+            }
+    }
+    <span class="keyword">return</span> arr;
+}
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2015-10-15T12:33:34.000Z"><a href="/2015/10/15/二次封装函数/">2015-10-15</a></time>
       
       
@@ -279,61 +347,6 @@
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-13T13:45:23.000Z"><a href="/2015/10/13/常用的js函数/">2015-10-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/13/常用的js函数/">常用的js函数</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>本文主要记录一些常用js函数的用法</p>
-<blockquote>
-<p>parseInt(string, radix)</p>
-</blockquote>
-<p>参数说明：<br>string：必需。要被解析的字符串。<br>radix：可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。<br><strong>提示</strong>：只有字符串中的第一个数字会被返回,开头和结尾的空格是允许的,如果字符串的第一个字符不能被转换为数字，那么 parseFloat() 会返回 NaN。<br><strong>注意</strong>：如果 string 以 “0x” 开头，parseInt() 会把 string 的其余部分解析为十六进制的整数。如果 string 以 0 开头，那么 ECMAScript v3 允许 parseInt() 的一个实现把其后的字符解析为八进制或十六进制的数字。如果 string 以 1 ~ 9 的数字开头，parseInt() 将把它解析为十进制的整数。</p>
-<pre><code><span class="built_in">parseInt</span>(<span class="string">"10"</span>);         <span class="comment">//返回 10  </span>
-<span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);      <span class="comment">//返回 19 (10+9)  </span>
-<span class="built_in">parseInt</span>(<span class="string">"11"</span>,<span class="number">2</span>);       <span class="comment">//返回 3 (2+1)  </span>
-<span class="built_in">parseInt</span>(<span class="string">"17"</span>,<span class="number">8</span>);       <span class="comment">//返回 15 (8+7)  </span>
-<span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);      <span class="comment">//返回 31 (16+15)  </span>
-<span class="built_in">parseInt</span>(<span class="string">"010"</span>);        <span class="comment">//未定：返回 10 或 8  </span>
-</code></pre>
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -359,7 +372,7 @@
   
     <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/categories/javascript/">javascript</a><small>4</small></li>
+    <li><a href="/categories/javascript/">javascript</a><small>5</small></li>
   
     <li><a href="/categories/操作系统/">操作系统</a><small>1</small></li>
   
