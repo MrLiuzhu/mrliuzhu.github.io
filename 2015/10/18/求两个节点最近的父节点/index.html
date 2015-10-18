@@ -5,19 +5,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>求两个正整数的最大公约数和最小公倍数 | 今天 明天</title>
+  <title>求两个节点最近的父节点 | 今天 明天</title>
   <meta name="author" content="刘柱">
   
-  <meta name="description" content="辗转相除法辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。
-原理
-javascript实现代码function (m,n) {
-    if (m&amp;lt;n) {
-        temp=m">
+  <meta name="description" content="题目查找两个节点的最近的一个共同父节点，可以包括节点自身  
+输入描述
+oNode1 和 oNode2 在同一文档中，且不会为相同的节点
+
+javascript代码function commonParentNode(oNode1, oNode2) {
+    if(oNode1.contains(o">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="求两个正整数的最大公约数和最小公倍数"/>
+  <meta property="og:title" content="求两个节点最近的父节点"/>
   <meta property="og:site_name" content="今天 明天"/>
 
   
@@ -69,33 +70,32 @@ javascript实现代码function (m,n) {
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-09T17:19:43.000Z"><a href="/2015/10/10/求两个正整数的最大公约数和最小公倍数/">2015-10-10</a></time>
+        <time datetime="2015-10-18T12:00:53.000Z"><a href="/2015/10/18/求两个节点最近的父节点/">2015-10-18</a></time>
       
       
   
-    <h1 class="title">求两个正整数的最大公约数和最小公倍数</h1>
+    <h1 class="title">求两个节点最近的父节点</h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="辗转相除法">辗转相除法</h3><p>辗转相除法， 又名欧几里德算法（Euclidean algorithm）,乃求两个正整数之最大公因子的算法。它是已知最古老的算法， 其可追溯至3000年前。</p>
-<h3 id="原理">原理</h3><p><img src="http://7xne7a.com1.z0.glb.clouddn.com/15101001.png" alt="辗转相除法证明"></p>
-<h3 id="javascript实现代码">javascript实现代码</h3><pre><code>function (<span class="keyword">m</span>,<span class="keyword">n</span>) {
-    <span class="keyword">if</span> (<span class="keyword">m</span>&lt;<span class="keyword">n</span>) {
-        temp=<span class="keyword">m</span>; 
-        <span class="keyword">m</span>=<span class="keyword">n</span>;
-        <span class="keyword">n</span>=temp;
-    };
-    <span class="keyword">do</span>{
-        temp=<span class="keyword">m</span>%<span class="keyword">n</span>;
-        <span class="keyword">m</span>=<span class="keyword">n</span>;
-        <span class="keyword">n</span>=temp;
-    }<span class="keyword">while</span>(temp);
-    <span class="keyword">var</span> yue=<span class="keyword">m</span>;              <span class="comment">//最大公约数</span>
-    console.<span class="literal">log</span>(yue);
-}
-</code></pre><h3 id="最小公倍数">最小公倍数</h3><p>最小公倍数的值可以通过最大公约数求得，即为输入的两个整数的乘积在除以最大公约数得到的值。</p>
+        <h3 id="题目">题目</h3><p>查找两个节点的最近的一个共同父节点，可以包括节点自身  </p>
+<h5 id="输入描述">输入描述</h5><blockquote>
+<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
+</blockquote>
+<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span><span class="params">(oNode1, oNode2)</span> {</span>
+    <span class="keyword">if</span><span class="params">(oNode1.contains<span class="params">(oNode2)</span>)</span>{
+       return oNode1;
+       }
+    <span class="keyword">else</span>{
+       return commonParentNode<span class="params">(oNode1.parentNode,oNode2)</span>;
+    }
+}  
+</code></pre><h3 id="说明">说明</h3><blockquote>
+<p>nodeA.contains(nodeB);</p>
+</blockquote>
+<p>这个方法起先用在 IE，用来确定nodeB是否包含在另一个nodeA中。如果包含，则返回true。</p>
 
       
     </div>
@@ -104,7 +104,7 @@ javascript实现代码function (m,n) {
         
   
   <div class="categories">
-    <a href="/categories/算法/">算法</a>
+    <a href="/categories/javascript/">javascript</a>
   </div>
 
         
@@ -133,10 +133,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
  <nav id="pagination" >
     
-    <a href="/2015/10/12/抛小球/" class="alignleft prev" >上一页</a>
     
-    
-    <a href="/2015/10/09/OGC和OGC规范/" class="alignright next" >下一页</a>
+    <a href="/2015/10/16/找出不在原型链上的属性/" class="alignright next" >下一页</a>
     
     <div class="clearfix"></div>
 </nav>

@@ -5,21 +5,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>MrLiuzhu</title>
+  <title>今天 明天</title>
   <meta name="author" content="刘柱">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <meta property="og:site_name" content="MrLiuzhu"/>
+  <meta property="og:site_name" content="今天 明天"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.ico" rel="icon" type="image/x-ico">
-  <link rel="alternate" href="http://zipperary.com/atom.xml" title="MrLiuzhu" type="application/atom+xml">
+  <link rel="alternate" href="http://zipperary.com/atom.xml" title="今天 明天" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
@@ -29,8 +29,8 @@
 <body>
   <header id="header" class="inner">
 <div class="alignleft">
-  <h1><a href="/">MrLiuzhu</a></h1>
-  <h2><a href="/">让子弹飞一会。。。。。。。。</a></h2>
+  <h1><a href="/">今天 明天</a></h1>
+  <h2><a href="/">水滴石穿。。。</a></h2>
 </div>
 <nav id="main-nav" class="alignright">
   <ul>
@@ -46,6 +46,66 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-18T12:00:53.000Z"><a href="/2015/10/18/求两个节点最近的父节点/">2015-10-18</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/18/求两个节点最近的父节点/">求两个节点最近的父节点</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>查找两个节点的最近的一个共同父节点，可以包括节点自身  </p>
+<h5 id="输入描述">输入描述</h5><blockquote>
+<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
+</blockquote>
+<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span><span class="params">(oNode1, oNode2)</span> {</span>
+    <span class="keyword">if</span><span class="params">(oNode1.contains<span class="params">(oNode2)</span>)</span>{
+       return oNode1;
+       }
+    <span class="keyword">else</span>{
+       return commonParentNode<span class="params">(oNode1.parentNode,oNode2)</span>;
+    }
+}  
+</code></pre><h3 id="说明">说明</h3><blockquote>
+<p>nodeA.contains(nodeB);</p>
+</blockquote>
+<p>这个方法起先用在 IE，用来确定nodeB是否包含在另一个nodeA中。如果包含，则返回true。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
   <article class="post">
   
     <div class="gallery">
@@ -281,72 +341,6 @@ iterate(<span class="keyword">new</span> C());
 
 
 
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-13T14:55:18.000Z"><a href="/2015/10/13/被两个数整除的算法/">2015-10-13</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/13/被两个数整除的算法/">被两个数整除的算法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="题目">题目</h3><p>实现 fizzBuzz 函数，参数 num 与返回值的关系如下：<br>1、如果 num 能同时被 3 和 5 整除，返回字符串 fizzbuzz<br>2、如果 num 能被 3 整除，返回字符串 fizz<br>3、如果 num 能被 5 整除，返回字符串 buzz<br>4、如果参数为空或者不是 Number 类型，返回 false<br>5、其余情况，返回参数 num<br>输入例子：  </p>
-<blockquote>
-<p>fizzBuzz(15)</p>
-</blockquote>
-<p>输出例子：</p>
-<blockquote>
-<p>fizzbuzz</p>
-</blockquote>
-<h3 id="javascript代码">javascript代码</h3><pre><code>function fizzBuzz(<span class="built_in">num</span>) {
-    <span class="keyword">if</span>(isNaN(<span class="built_in">num</span>)){
-        <span class="keyword">return</span> <span class="keyword">false</span>;
-    }
-    <span class="keyword">var</span> str=<span class="string">''</span>;
-    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">3</span>===<span class="number">0</span>){
-        str+=<span class="string">'fizz'</span>;
-    }
-    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">5</span>===<span class="number">0</span>){
-        str+=<span class="string">'buzz'</span>;
-    }
-    <span class="keyword">return</span> str||<span class="built_in">num</span>;
-}
-</code></pre><p>附：返回的是字符串，需要加引号</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -372,7 +366,7 @@ iterate(<span class="keyword">new</span> C());
   
     <li><a href="/categories/hexo/">hexo</a><small>1</small></li>
   
-    <li><a href="/categories/javascript/">javascript</a><small>5</small></li>
+    <li><a href="/categories/javascript/">javascript</a><small>6</small></li>
   
     <li><a href="/categories/操作系统/">操作系统</a><small>1</small></li>
   
@@ -388,6 +382,7 @@ iterate(<span class="keyword">new</span> C());
 <li>NAME：刘柱</li>
 <li>现状：大四学生</li>
 <li>QQ : 1179501590</li>
+<li>Dream : 走遍中国</li>
 </ul>
 </div>
 
