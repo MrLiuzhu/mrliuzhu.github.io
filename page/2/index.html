@@ -39,8 +39,6 @@
     
       <li><a href="/archives">归档</a></li>
     
-      <li><a href="/test">Music</a></li>
-    
 
   </ul>
   <div class="clearfix"></div>
@@ -66,32 +64,311 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-10-18T12:00:53.000Z"><a href="/2015/10/18/求两个节点最近的父节点/">2015-10-18</a></time>
+        <time datetime="2015-10-13T16:21:07.000Z"><a href="/2015/10/14/apply和call函数/">2015-10-14</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/10/18/求两个节点最近的父节点/">求两个节点最近的父节点</a></h1>
+    <h1 class="title"><a href="/2015/10/14/apply和call函数/">apply和call函数</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h3 id="题目">题目</h3><p>查找两个节点的最近的一个共同父节点，可以包括节点自身  </p>
-<h5 id="输入描述">输入描述</h5><blockquote>
-<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
+        <h3 id="apply">apply</h3><p>该方法能劫持另外一个对象的方法，继承另外一个对象的属性。<br>函数声明：Function.apply(obj,args)  </p>
+<blockquote>
+<p>obj:这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function  </p>
 </blockquote>
-<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span><span class="params">(oNode1, oNode2)</span> {</span>
-    <span class="keyword">if</span><span class="params">(oNode1.contains<span class="params">(oNode2)</span>)</span>{
-       return oNode1;
-       }
-    <span class="keyword">else</span>{
-       return commonParentNode<span class="params">(oNode1.parentNode,oNode2)</span>;
+<h3 id="call">call</h3><p>函数声明：Function.call(obj,[param1[,param2[,…[,paramN]]]])    </p>
+<blockquote>
+<p>obj:这个对象将代替Function类里this对象<br>args：这个是一个参数列表  </p>
+</blockquote>
+<h3 id="具体使用情况">具体使用情况</h3><p>使用apply时参数可以是数组类型，使用call时参数是参数列表的形式。  </p>
+<h3 id="一些妙用">一些妙用</h3><p>apply可以将一个数组默认的转换为一个参数列表([param1,param2,param3] 转换为 param1,param2,param3)。  </p>
+<ul>
+<li>Math.max 可以实现得到数组中最大的一项<br>方法：<br>  var max=Math.max.apply(null,array)</li>
+<li>Math.min  可以实现得到数组中最小的一项<br>方法：<br>  var min=Math.min.apply(null,array);  </li>
+<li><p>Array.prototype.push 可以实现两个数组合并<br>  vararr1=new Array(“1”,”2”,”3”);<br>  vararr2=new Array(“4”,”5”,”6”);<br>  Array.prototype.push.apply(arr1,arr2);  </p>
+</li>
+<li><p>Array.prototype.slice.call(arguments,1) //将arguments对象转化成数组,从1出开始截取</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-13T14:55:18.000Z"><a href="/2015/10/13/被两个数整除的算法/">2015-10-13</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/13/被两个数整除的算法/">被两个数整除的算法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>实现 fizzBuzz 函数，参数 num 与返回值的关系如下：<br>1、如果 num 能同时被 3 和 5 整除，返回字符串 fizzbuzz<br>2、如果 num 能被 3 整除，返回字符串 fizz<br>3、如果 num 能被 5 整除，返回字符串 buzz<br>4、如果参数为空或者不是 Number 类型，返回 false<br>5、其余情况，返回参数 num<br>输入例子：  </p>
+<blockquote>
+<p>fizzBuzz(15)</p>
+</blockquote>
+<p>输出例子：</p>
+<blockquote>
+<p>fizzbuzz</p>
+</blockquote>
+<h3 id="javascript代码">javascript代码</h3><pre><code>function fizzBuzz(<span class="built_in">num</span>) {
+    <span class="keyword">if</span>(isNaN(<span class="built_in">num</span>)){
+        <span class="keyword">return</span> <span class="keyword">false</span>;
     }
-}  
-</code></pre><h3 id="说明">说明</h3><blockquote>
-<p>nodeA.contains(nodeB);</p>
+    <span class="keyword">var</span> str=<span class="string">''</span>;
+    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">3</span>===<span class="number">0</span>){
+        str+=<span class="string">'fizz'</span>;
+    }
+    <span class="keyword">if</span>(<span class="built_in">num</span>%<span class="number">5</span>===<span class="number">0</span>){
+        str+=<span class="string">'buzz'</span>;
+    }
+    <span class="keyword">return</span> str||<span class="built_in">num</span>;
+}
+</code></pre><p>附：返回的是字符串，需要加引号</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-13T13:45:23.000Z"><a href="/2015/10/13/js笔记/">2015-10-13</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/13/js笔记/">js笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>本文主要记录一些常用js函数的用法</p>
+<h4 id="parseInt(string,_radix)">parseInt(string, radix)</h4><p>参数说明：<br>string：必需。要被解析的字符串。<br>radix：可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。<br>如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN。<br><strong>提示</strong>：只有字符串中的第一个数字会被返回,开头和结尾的空格是允许的,如果字符串的第一个字符不能被转换为数字，那么 parseFloat() 会返回 NaN。<br><strong>注意</strong>：如果 string 以 “0x” 开头，parseInt() 会把 string 的其余部分解析为十六进制的整数。如果 string 以 0 开头，那么 ECMAScript v3 允许 parseInt() 的一个实现把其后的字符解析为八进制或十六进制的数字。如果 string 以 1 ~ 9 的数字开头，parseInt() 将把它解析为十进制的整数。</p>
+<pre><code><span class="built_in">parseInt</span>(<span class="string">"10"</span>);         <span class="comment">//返回 10  </span>
+<span class="built_in">parseInt</span>(<span class="string">"19"</span>,<span class="number">10</span>);      <span class="comment">//返回 19 (10+9)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"11"</span>,<span class="number">2</span>);       <span class="comment">//返回 3 (2+1)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"17"</span>,<span class="number">8</span>);       <span class="comment">//返回 15 (8+7)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"1f"</span>,<span class="number">16</span>);      <span class="comment">//返回 31 (16+15)  </span>
+<span class="built_in">parseInt</span>(<span class="string">"010"</span>);        <span class="comment">//未定：返回 10 或 8  </span>
+</code></pre><h3 id="NumberObject-toString(radix)">NumberObject.toString(radix)</h3><p>作用：number转换成字符串<br>调用：NumberObject.toString(2);//NumberObject，2为转换成字符串的基数，此处将数字转换为2进制。<br><strong>返回值</strong>：数字的字符串表示</p>
+<h3 id="NOSCRIPT标签">NOSCRIPT标签</h3><p>NOSCRIPT标签用来定义在脚本未被执行时的替代内容。也可以用在检测浏览器是否支持脚本，若不支持脚本则可以显示NOSCRIPT标签里的innerText</p>
+<h3 id="js类型问题">js类型问题</h3><p><strong>七种数据类型</strong>：Sting  Object  null  undefined  Array  Boolean  Number<br><strong>五种基本类型</strong>：String Object Number null undefined<br><strong>typeof六种返回格式</strong>：’string’  ‘number’  ‘object’  ‘function’  ‘null’  ‘undefined’  </p>
+<h3 id="flash和js通过什么类如何交互？">flash和js通过什么类如何交互？</h3><p>Flash提供了ExternalInterface接口与JavaScript通信，ExternalInterface有两个方法，call和addCallback，call的作用是让Flash调用js里的方法，addCallback是用来注册flash函数让js调用。  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-12T12:23:18.000Z"><a href="/2015/10/12/aboutArray/">2015-10-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/12/aboutArray/">部分数组函数的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>移除数组 arr 中的所有值与 item 相等的元素，请直接在给定的 arr 数组上进行操作  </p>
+<blockquote>
+<p>测试样例：<br>&emsp;&emsp;removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2)<br>返回：<br>&emsp;&emsp;[1, 3, 4]</p>
 </blockquote>
-<p>这个方法起先用在 IE，用来确定nodeB是否包含在另一个nodeA中。如果包含，则返回true。</p>
+<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span><span class="params">(arr, item)</span> {</span>
+    var len=arr.<span class="built_in">length</span>;
+    <span class="keyword">for</span>(var <span class="built_in">i</span>=len-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">0</span>;<span class="built_in">i</span>--)<span class="cell">{
+        if(arr[i]==item)
+            {
+                arr.splice(i,<span class="number">1</span>);
+            }</span>
+    }
+    <span class="keyword">return</span> arr;
+}
+</code></pre><h3 id="javascript代码2">javascript代码2</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">removeWithoutCopy</span><span class="params">(arr, item)</span> {</span>
+    var len=arr.<span class="built_in">length</span>;
+    <span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;len;<span class="built_in">i</span>++)<span class="cell">{
+        if(arr[i]==item)
+            {
+                arr.splice(i,<span class="number">1</span>);
+            }</span>
+        <span class="built_in">i</span>--;
+    }
+    <span class="keyword">return</span> arr;
+}
+</code></pre><h3 id="splice函数说明">splice函数说明</h3><p>&emsp;&emsp;array.splice(start,delCount,item1,item2….);//该函数从start位置开始删除delCount数量个元素，然后从start的位置插入后面的其他元素  </p>
+<blockquote>
+<p>start:开始删除元素的位置：包括这个位置；<br>delCount:删除元素的个数；<br>item1,item2…:删除后从start位置开始添加的元素<br><strong>返回值</strong>：被删除项目组成的新数组。</p>
+</blockquote>
+<p>例：var arr=[1,2,3,4];<br>arr.splice(1,2);//[1,4] 从位置为1的位置开始删除两个元素；<br>arr.splice(1,1,3);//[1,3,3,4] 从位置为1的地方删除一个元素，然后在这个位置添加元素3；</p>
+<h3 id="slice函数">slice函数</h3><p>&emsp;&emsp;arrayObject.slice(start,end)//该函数从已有的数组中返回选定的元素  </p>
+<blockquote>
+<p>start:必须，开始选取元素的位置，如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。；<br>end:可选。规定从何处结束选取；<br><strong>返回值</strong>：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。 </p>
+</blockquote>
+<h3 id="复制数组">复制数组</h3><p>&emsp;&emsp;var newarr=arr.slice(0);</p>
+<h3 id="forEach函数">forEach函数</h3><p>该函数不改变原函数的值</p>
+<h3 id="题目：统计数组arr中值等于item的元素出现的次数">题目：统计数组arr中值等于item的元素出现的次数</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">(arr, item)</span> </span>{
+    <span class="keyword">var</span> num=<span class="number">0</span>;
+    arr.<span class="keyword">forEach</span>(<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{
+           item==e?num++:num;
+    })
+    <span class="keyword">return</span> num;
+}
+</code></pre><h3 id="sort()函数">sort()函数</h3><p>该函数默认已字符串的方式进行排序</p>
+<blockquote>
+<p><strong>返回值</strong>：对数组的引用。请注意，数组在原数组上进行排序，不生成副本。</p>
+</blockquote>
+<h3 id="查找数组重复元素">查找数组重复元素</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">duplicates</span><span class="params">(arr)</span> <span class="comment">{
+    var a=arr.sort();
+    var b=[];
+    for(var i in a){
+        if(a[i]==a[i-1] &amp;&amp; b.indexOf(a[i])==-1) b.push(a[i]); 
+    }</span>
+    <span class="title">return</span> <span class="title">b</span>;</span>
+}
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-12T04:42:26.000Z"><a href="/2015/10/12/hexo常用功能/">2015-10-12</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/12/hexo常用功能/">hexo常用功能</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="本章内容为hexo常用功能的记录">本章内容为hexo常用功能的记录</h2><h3 id="句首空格实现">句首空格实现</h3><blockquote>
+<p>半方大的空白&ensp;&ensp;<code>&amp;ensp;</code>或<code>&amp;#8194;</code><br>全方大的空白&ensp;&ensp;<code>&amp;emsp;</code>或<code>&amp;#8195;</code><br>不断行的空白格&ensp;&ensp;<code>&amp;nbsp;</code>或<code>&amp;#160;</code></p>
+</blockquote>
+<h3 id="通过添加反斜线(\)插入下面的符号">通过添加反斜线(\)插入下面的符号</h3><blockquote>
+<p>\&emsp;&emsp;反斜线<br>`&emsp;&emsp;反引号<br>*&emsp;&emsp;星号<br>_&emsp;&emsp;底线<br>{}&emsp;&emsp;花括号<br>[]&emsp;&emsp;方括号<br>()&emsp;&emsp;括弧<br>#&emsp;&emsp;#号<br>+&emsp;&emsp;加号<br>-&emsp;&emsp;减号<br>.&emsp;&emsp;英文句点<br>!&emsp;&emsp;惊叹号</p>
+</blockquote>
+<h3 id="添加分割线:用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西,也可以在星号或是减号中间插入空格。下面是一些例子：">添加分割线:用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西,也可以在星号或是减号中间插入空格。下面是一些例子：</h3><p>***</p>
+<hr>
+<p>* <em> </em></p>
+<hr>
+<p>*<em>**</em></p>
+<hr>
 
       
     </div>
@@ -120,7 +397,7 @@
 </nav></div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
-  <form action="https://www.baidu.com/s" method="get" accept-charset="utf-8">
+  <form action="https://www.baidu.com/" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>

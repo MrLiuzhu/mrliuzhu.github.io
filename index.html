@@ -39,8 +39,6 @@
     
       <li><a href="/archives">归档</a></li>
     
-      <li><a href="/test">Music</a></li>
-    
 
   </ul>
   <div class="clearfix"></div>
@@ -119,6 +117,239 @@
 
 
 
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-18T12:00:53.000Z"><a href="/2015/10/18/求两个节点最近的父节点/">2015-10-18</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/18/求两个节点最近的父节点/">求两个节点最近的父节点</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>查找两个节点的最近的一个共同父节点，可以包括节点自身  </p>
+<h5 id="输入描述">输入描述</h5><blockquote>
+<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
+</blockquote>
+<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span><span class="params">(oNode1, oNode2)</span> {</span>
+    <span class="keyword">if</span><span class="params">(oNode1.contains<span class="params">(oNode2)</span>)</span>{
+       return oNode1;
+       }
+    <span class="keyword">else</span>{
+       return commonParentNode<span class="params">(oNode1.parentNode,oNode2)</span>;
+    }
+}  
+</code></pre><h3 id="说明">说明</h3><blockquote>
+<p>nodeA.contains(nodeB);</p>
+</blockquote>
+<p>这个方法起先用在 IE，用来确定nodeB是否包含在另一个nodeA中。如果包含，则返回true。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-16T06:48:02.000Z"><a href="/2015/10/16/找出不在原型链上的属性/">2015-10-16</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/16/找出不在原型链上的属性/">找出不在原型链上的属性</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>找出对象 obj 不在原型链上的属性<br>1.返回数组，格式为 key: value<br>2.结果数组不要求顺序   </p>
+<blockquote>
+<p>输入例子</p>
+</blockquote>
+<pre><code><span class="keyword">var</span> C = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+        <span class="keyword">this</span>.foo = <span class="string">'bar'</span>; 
+        <span class="keyword">this</span>.baz = <span class="string">'bim'</span>;
+    }; 
+C.prototype.bop = <span class="string">'bip'</span>; 
+iterate(<span class="keyword">new</span> C());
+</code></pre><blockquote>
+<p>输出例子</p>
+</blockquote>
+<pre><code>[<span class="string">"foo: bar"</span>, <span class="string">"baz: bim"</span>]
+</code></pre><h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">iterate</span><span class="params">(obj)</span> </span>{
+    <span class="keyword">var</span> arr=[];
+    <span class="keyword">for</span>(<span class="keyword">var</span> o <span class="keyword">in</span> obj){
+        <span class="keyword">if</span>(obj.hasOwnProperty(o))
+            {
+                arr.push(o+<span class="string">": "</span>+obj[o]);
+            }
+    }
+    <span class="keyword">return</span> arr;
+}
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-15T12:33:34.000Z"><a href="/2015/10/15/二次封装函数/">2015-10-15</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/15/二次封装函数/">二次封装函数</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="题目">题目</h3><p>实现函数 partialUsingArguments，调用之后满足如下条件：<br>1、返回一个函数 result<br>2、调用 result 之后，返回的结果与调用函数 fn 的结果一致<br>3、fn 的调用参数为 partialUsingArguments 的第一个参数之后的全部参数以及 result 的调用参数  </p>
+<blockquote>
+<p>输入例子</p>
+</blockquote>
+<p>var a = 1; var b = 2; var c = 3; var d = 4;<br>var test = function (first, second, third, forth)     {return first + second + third +forth;<br>partialUsingArguments(test, a, b)(c, d);</p>
+<blockquote>
+<p>输出例子:</p>
+</blockquote>
+<p>10</p>
+<h3 id="javascript">javascript</h3><pre><code>function partialUsingArguments(fn) {
+    <span class="keyword">var</span> newarr=<span class="type">Array</span>.prototype.slice.call(arguments,<span class="number">1</span>);
+    <span class="keyword">var</span> <span class="literal">result</span>=function(){
+        <span class="keyword">return</span> fn.apply(null,newarr.concat([].slice.call(arguments)));
+    }
+    <span class="keyword">return</span> <span class="literal">result</span>;
+}
+</code></pre><h3 id="说明">说明</h3><p>Array.prototype.slice.call(arguments,1);    //将函数参数从第一位截取为数组  </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-10-14T04:56:50.000Z"><a href="/2015/10/14/进程和线程/">2015-10-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/10/14/进程和线程/">进程和线程</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
 
 <nav id="pagination">
   
@@ -129,7 +360,7 @@
 </nav></div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
-  <form action="https://www.baidu.com/s" method="get" accept-charset="utf-8">
+  <form action="https://www.baidu.com/" method="get" accept-charset="utf-8">
     <input type="search" name="q" results="0" placeholder="搜索">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
