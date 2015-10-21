@@ -5,13 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>今天 明天</title>
+  <title>哈夫曼树以及先序、中序、后序 | 今天 明天</title>
   <meta name="author" content="刘柱">
+  
+  <meta name="description" content="树树：树T是n个结点构成的有限集合（n&amp;gt;0），其中有一个结点叫根，其余结点可划分为m个互不相交的自己T1,T2…Tm（m&amp;gt;=0）,并且这m个子集本身又构成树，称为T的子树；度：指某个结点的孩子数目；叶子结点：结点的度为0；内部结点：非根的分支结点；一棵树的度：树中最大的结点度；森林：多棵">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="哈夫曼树以及先序、中序、后序"/>
   <meta property="og:site_name" content="今天 明天"/>
 
   
@@ -45,52 +47,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-20T06:00:04.000Z"><a href="/2015/10/20/南方测绘笔试题/">2015-10-20</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/20/南方测绘笔试题/">南方测绘笔试题</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
     <div class="gallery">
   <div class="photoset">
@@ -112,7 +69,7 @@
       
       
   
-    <h1 class="title"><a href="/2015/10/20/哈夫曼树以及先序、中序、后序/">哈夫曼树以及先序、中序、后序</a></h1>
+    <h1 class="title">哈夫曼树以及先序、中序、后序</h1>
   
 
     </header>
@@ -145,79 +102,33 @@
     <footer>
       
         
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
+  <div class="categories">
+    <a href="/categories/数据结构/">数据结构</a>
   </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/c/">c++</a>
   </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
 </div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-18T13:17:54.000Z"><a href="/2015/10/18/数组去重/">2015-10-18</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/18/数组去重/">数组去重</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="题目">题目</h3><p>为 Array 对象添加一个去除重复项的方法 </p>
-<blockquote>
-<p>输入例子</p>
-</blockquote>
-<pre><code>[<span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">undefined</span>, <span class="literal">null</span>, <span class="literal">NaN</span>, <span class="number">0</span>, <span class="number">1</span>, {}, {}, <span class="string">'a'</span>, <span class="string">'a'</span>, <span class="literal">NaN</span>].uniq()
-</code></pre><blockquote>
-<p>输出例子</p>
-</blockquote>
-<pre><code>[<span class="literal">false</span>, <span class="literal">true</span>, undefined, <span class="literal">null</span>, NaN, <span class="number">0</span>, <span class="number">1</span>, {}, {}, 'a']
-</code></pre><h3 id="javascript代码">javascript代码</h3><pre><code><span class="built_in">Array</span>.prototype.uniq = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-    <span class="keyword">var</span> hasNaN=<span class="literal">false</span>;
-    <span class="keyword">var</span> len=<span class="keyword">this</span>.length;
-    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;len;i++){
-        <span class="keyword">if</span>(<span class="keyword">this</span>[i]!==<span class="keyword">this</span>[i]) hasNaN=<span class="literal">true</span>;    <span class="comment">//NaN 与其他数值进行比较的结果总是不相等的，包括它自身在内</span>
-        <span class="keyword">for</span>(<span class="keyword">var</span> j=i+<span class="number">1</span>;j&lt;len;){
-            <span class="keyword">if</span>(<span class="keyword">this</span>[j]===<span class="keyword">this</span>[i] || (hasNaN&amp;&amp;(<span class="keyword">this</span>[j]!==<span class="keyword">this</span>[j]))){
-                <span class="keyword">this</span>.splice(j,<span class="number">1</span>);            <span class="comment">//此时当前位置变为下一个元素，因此不需要j++</span>
-                len-=<span class="number">1</span>;
-            }
-            <span class="keyword">else</span>{
-                j++;
-            }
-        }
-    }
-    <span class="keyword">return</span> <span class="keyword">this</span>;
-}
-</code></pre><h3 id="说明">说明</h3><p><strong>NaN</strong>:NaN 与其他数值进行比较的结果总是不相等的，包括它自身在内,因此需要单独判断。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
       <div class="clearfix"></div>
     </footer>
   </div>
@@ -225,143 +136,39 @@
 
 
 
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
+ <nav id="pagination" >
     
-      <img src="">
+    <a href="/2015/10/20/南方测绘笔试题/" class="alignleft prev" >上一页</a>
     
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-18T12:00:53.000Z"><a href="/2015/10/18/求两个节点最近的父节点/">2015-10-18</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/18/求两个节点最近的父节点/">求两个节点最近的父节点</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="题目">题目</h3><p>查找两个节点的最近的一个共同父节点，可以包括节点自身  </p>
-<h5 id="输入描述">输入描述</h5><blockquote>
-<p>oNode1 和 oNode2 在同一文档中，且不会为相同的节点</p>
-</blockquote>
-<h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">commonParentNode</span><span class="params">(oNode1, oNode2)</span> {</span>
-    <span class="keyword">if</span><span class="params">(oNode1.contains<span class="params">(oNode2)</span>)</span>{
-       return oNode1;
-       }
-    <span class="keyword">else</span>{
-       return commonParentNode<span class="params">(oNode1.parentNode,oNode2)</span>;
-    }
-}  
-</code></pre><h3 id="说明">说明</h3><blockquote>
-<p>nodeA.contains(nodeB);</p>
-</blockquote>
-<p>这个方法起先用在 IE，用来确定nodeB是否包含在另一个nodeA中。如果包含，则返回true。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
     
-      <img src="">
+    <a href="/2015/10/18/数组去重/" class="alignright next" >下一页</a>
     
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-10-16T06:48:02.000Z"><a href="/2015/10/16/找出不在原型链上的属性/">2015-10-16</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/10/16/找出不在原型链上的属性/">找出不在原型链上的属性</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="题目">题目</h3><p>找出对象 obj 不在原型链上的属性<br>1.返回数组，格式为 key: value<br>2.结果数组不要求顺序   </p>
-<blockquote>
-<p>输入例子</p>
-</blockquote>
-<pre><code><span class="keyword">var</span> C = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
-        <span class="keyword">this</span>.foo = <span class="string">'bar'</span>; 
-        <span class="keyword">this</span>.baz = <span class="string">'bim'</span>;
-    }; 
-C.prototype.bop = <span class="string">'bip'</span>; 
-iterate(<span class="keyword">new</span> C());
-</code></pre><blockquote>
-<p>输出例子</p>
-</blockquote>
-<pre><code>[<span class="string">"foo: bar"</span>, <span class="string">"baz: bim"</span>]
-</code></pre><h3 id="javascript代码">javascript代码</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">iterate</span><span class="params">(obj)</span> </span>{
-    <span class="keyword">var</span> arr=[];
-    <span class="keyword">for</span>(<span class="keyword">var</span> o <span class="keyword">in</span> obj){
-        <span class="keyword">if</span>(obj.hasOwnProperty(o))
-            {
-                arr.push(o+<span class="string">": "</span>+obj[o]);
-            }
-    }
-    <span class="keyword">return</span> arr;
-}
-</code></pre>
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+    <div class="clearfix"></div>
+</nav>
 
 
 
+<section id="comment">
 
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zippera"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
 
-<nav id="pagination">
   
-  
-    <a href="/page/2/" class="alignright next">下一页</a>
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</section>
+
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="https://www.baidu.com/" method="get" accept-charset="utf-8">
