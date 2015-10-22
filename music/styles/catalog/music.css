@@ -1,0 +1,52 @@
+body{
+/*     background-image: url(../../catalog/music/images/music-back.jpg); */
+    overflow: hidden;
+}
+
+#music-main{
+    width: 80%;
+    min-height: 150px;
+    margin: 30px auto;
+}
+
+#music-container{
+    font-size: 1.7em;
+    width: 70%;
+    margin: 5px 10% 5px 25%;
+}
+
+.music-begin{
+    background-image: url(../../images/start.ico);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.music-end{
+    background-image: url(../../images/musicend.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.music-share{
+    background-image: url(../../catalog/music/images/qqzone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.music-begin:hover,
+.music-end:hover,
+.music-share:hover{
+    cursor: pointer;
+}
+
+
+tr a:hover{
+    text-decoration: none;
+    color:  #72ACE3;
+    cursor: pointer;
+}
+
+#music-container tr{
+    height: 40px;
+}
+
